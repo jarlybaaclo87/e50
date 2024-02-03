@@ -2,6 +2,7 @@
 const express = require("express");
 //---import utils using destructuring
 const {createFolder, createFile} =require("./utils");
+const postData = require("./data/post.json");
 //console.log(express);
 const app = express();
 //---create folder data
@@ -15,7 +16,8 @@ app.get("/", (req, res)=>{
 });
 //---fetch all posts
 app.get("/posts", function(req, res){
-    res.send("Fetch all post route");
+    // res.send("Fetch all post");
+    res.json(postData);
 });
 //---create post
 app.post("/posts", (req, res)=>{
